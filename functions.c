@@ -4,7 +4,7 @@
  * @s: pointer to our string
  * Return: length of the string
  */
-int _strlen(char *s)
+int _strlen(va_list va_printf)
 {
 	int g;
 
@@ -18,7 +18,7 @@ int _strlen(char *s)
  *@s:string to analize
  *Return: All chars of our string
  **/
-char _printf_s(char *s)
+char _printf_s(va_list va_printf)
 {
 	int lstr = 0;
 
@@ -33,7 +33,7 @@ char _printf_s(char *s)
  *@s: pointer to check
  *Return: char(s) to print.
  */
-char _printf_c(char *s)
+char _printf_c(va_list va_printf)
 {
 	int c;
 
@@ -46,7 +46,7 @@ char _printf_c(char *s)
  *@a: number to print
  *Return: our number ready to print
  */
-int _printf_d(int a)
+int _printf_d(va_list va_printf)
 {
 	int number = a;
 	int dummie = number;
