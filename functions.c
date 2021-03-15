@@ -18,7 +18,7 @@ int _strlen(char *s)
  *@s:string to analize
  *Return: All chars of our string
  **/
-char _printf_s(char *s);
+char _printf_s(char *s)
 {
 	int lstr = 0;
 
