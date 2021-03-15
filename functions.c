@@ -18,7 +18,7 @@ int _strlen(char *s)
  *@s:string to analize
  *Return: All chars of our string
  **/
-char _printf_s(char *s);
+char _printf_s(char *s)
 {
 	int lstr = 0;
 
@@ -42,11 +42,37 @@ char _printf_c(char *s)
 }
 
 /**
- *
- *
- *
+ *_printf_d - Prints a decimal (base 10) number
+ *@a: number to print
+ *Return: our number ready to print
  */
-int _printf_d(int d)
+int _printf_d(int a)
 {
+	int number = a;
+	int dummie = number;
+	int cadena[25];
+	int e = 0;
+
+	if (number < 0)
+	{
+		number = -number;
+	}
+	while (number != 0)
+	{
+		cadena[e++] = (number % 10);
+		number /= 10;
+	}
+	if (dummie < 0)
+	{
+		cadena[e++] = '-';
+		e--;
+	}
+	while (e >= 0)
+	{
+		if (cadena[e] != '-')
+		return (cadena[e--] + '0');
+		else
+		return (cadena[e--]);
+	}
 
 }
