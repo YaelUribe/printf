@@ -12,7 +12,7 @@ if (format == NULL)
 va_list va_printf;
 va_start(va_printf, format);
 
-int number = 0; /* revisar */
+int number = 0; /* mover a funcion de d */
 int green = 0;
 int leng = _strlen(format);
 int y = 0;
