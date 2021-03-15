@@ -20,11 +20,33 @@ int _strlen(char *s)
  **/
 char _printf_s(char *s);
 {
-	char lstr = 0;
+	int lstr = 0;
 
 	while (s[lstr] != '\0')
 	{
 		lstr++;
 	}
 	return (lstr);
+}
+/**
+ *_printf_c -function to print char
+ *@s: pointer to check
+ *Return: char(s) to print.
+ */
+char _printf_c(char *s)
+{
+	int c;
+
+	for (c = 0; s[c] != '\0'; c++)
+	return  (c);
+}
+
+/**
+ *
+ *
+ *
+ */
+int _printf_d(int d)
+{
+
 }
