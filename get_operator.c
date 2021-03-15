@@ -10,7 +10,7 @@ int (*get_operator(const char c))(va_list va_printf)
 		{"c", _printf_c},
 		{"s", _printf_s},
 		{"d", _printf_d},
-		{"i", _printf_i}
+		{"i", _printf_d},
 		{NULL, NULL},
 	};
 	int a = 0;
