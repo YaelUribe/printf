@@ -5,18 +5,32 @@
 */
 int _printf(const char *format, ...)
 {
-if (format == NULL)
+	if (format == NULL)
+	{
+		return (0); //-1 ?? lo que sea
+	}
+	va_list va_printf;
+
+	int number;
+	int buffer;
+	int leng = _strlen(format);
+	int y;
+
+	for (y = 0; format[y] != '\0', y++)
+	{
+		buffer = 0;
+		va_start(va_printf, format);
+		if ((format[y] == '%') && ((y + 1) < leng))
+			{
+				y++;
+				if (aval(format[y]))
+				{
+					buffer += get_operator(format[i])(va_printf);
+				}// si no, putchar (char)
+			}// si nada de nada, putchar y incrementar buff
+	}
+}
+int aval(char c)
 {
-	return (0);
+	return (c == 'c' || c == 's' || c == 'd' || c == 'i');
 }
-va_list va_printf;
-va_start(va_printf, format);
-
-int number = 0; /* mover a funcion de d */
-int green = 0;
-int leng = _strlen(format);
-int y = 0;
-if ((format[y] == '%') && ((y + 1) < leng))
-}
-
-
