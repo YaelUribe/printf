@@ -2,6 +2,8 @@
 #define HOLBERTON_H
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 int _printf(const char *format, ...);
 int _strlen(va_list va_printf);
 char _printf_s(va_list va_printf);
