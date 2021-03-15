@@ -3,4 +3,8 @@
 #include <stdarg.h>
 #include <unistd.h>
 int _printf(const char *format, ...);
+int _strlen(char *s);
+char _printf_s(char *s);
+char _printf_c(char *s);
+
 #endif /* HOLBERTON_H */
