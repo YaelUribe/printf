@@ -6,30 +6,31 @@
  */
 int _printf_d(va_list va_printf)
 {
-	int number, signo = 1, digitos = 0, d, base;
+	int number, signo = 1, digitos = 0, d = 0, base;
 	unsigned int dummie;
 	char numberz[1024];
 
-	number = va_arg(va-printf, int), digitos, signo;
+	number = va_arg(va_printf, int);
 	dummie = number <  0  ? (unsigned int) number * -1 : (unsigned int) number;
 	if (number < 0)
 	{
 		signo = -1;
 	}
-	else if ( number == 0)
+	else if (number == 0)
 	{
 		return (write(1, "0", 1));
 	}
-	for (signo == -1)
+	if (signo == -1)
 	{
-		d = 0, numberz[d] = '-', d++;
+		*(numberz + d) = '-';
+		d++;
 	}
 	digitos =  _digitos(dummie);
 	base = _divider(digitos);
 
-	while (base >0)
+	while (base > 0)
 	{
-		numberz[d] = '-';
+		*(numberz + d) = '0' + (dummie / base);
 		dummie %= base;
 		base /= 10;
 		d++;
@@ -38,7 +39,7 @@ int _printf_d(va_list va_printf)
 	{
 		digitos++;
 	}
-	return (write(1,numberz, digitos));
+	return (write(1, numberz, digitos));
 }
 /**
  * _divider - to get the first digit on any number
@@ -49,8 +50,8 @@ int _divider(int digitos)
 {
 	int base = 1;
 
-	exponente = digitos;
-	while ( exponente > 1)
+	int exponente = digitos;
+	while (exponente > 1)
 	{
 		base *= 10;
 		exponente--;
@@ -58,7 +59,7 @@ int _divider(int digitos)
 	return (base);
 }
 /**
- *_digitos - determines amount o digits when dummie >= 10
+ *_digitos - determines amount of digits when dummie >= 10
  *@dummie:unsigned of int to analize
  *Return: digits of dummie
  */
@@ -66,7 +67,7 @@ int _digitos(unsigned int dummie)
 {
 	int digit;
 
-	for (digit = 0, dummie > 0; digit++)
+	for (digit = 0; dummie > 0; digit++)
 	{
 		dummie /= 10;
 	}
