@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	int leng = _strlen(format);
 	int y;
 
-	for (y = 0; format[y] != '\0', y++)
+	for (y = 0; format[y] != '\0'; y++)
 	{
 		buffer = 0;
 		va_start(va_printf, format);
@@ -25,11 +25,23 @@ int _printf(const char *format, ...)
 				y++;
 				if (aval(format[y]))
 				{
-					buffer += get_operator(format[i])(va_printf);
-				}// si no, putchar (char)
+					buffer += get_operator(format[y])(va_printf);
+				}
+				else if (format[y] == '\0')
+				{
+					return (0);
+				}
+					// si no, putchar (char)
 			}// si nada de nada, putchar y incrementar buff
 	}
+	va_end(va_printf);
+	return (buffer); // (write(1, buffer, 1024);
 }
+/**
+ *aval - see if given char matches with operators
+ *@c: Char to compare with operator
+ *Return: proper operator
+ */
 int aval(char c)
 {
 	return (c == 'c' || c == 's' || c == 'd' || c == 'i');
