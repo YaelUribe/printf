@@ -4,7 +4,7 @@
  * @s: pointer to our string
  * Return: length of the string
  */
-int _strlen(va_list va_printf)
+int _strlen(char *s)
 {
 	int g;
 
@@ -21,12 +21,24 @@ int _strlen(va_list va_printf)
 char _printf_s(va_list va_printf)
 {
 	int lstr = 0;
+	char *strp;
+	int t = 0;
 
-	while (s[lstr] != '\0')
-	{
-		lstr++;
+	strp = va_arg(va_printf, char*);
+	if(strp == NULL)
+	{/* if our pointer is empty, return null*/
+		return(write(1, "NULL", 4));
 	}
-	return (lstr);
+	else
+	{		/*here get length of string*/
+		while(strp[t] != '\0')
+		{
+			lstr++;/*lstr augments, so it's our "buffer"*/
+			t++;
+		}
+		return(write(1, strp, lstr));
+	}
+
 }
 /**
  *_printf_c -function to print char
@@ -35,10 +47,11 @@ char _printf_s(va_list va_printf)
  */
 char _printf_c(va_list va_printf)
 {
-	int c;
+	 char c;
 
-	for (c = 0; s[c] != '\0'; c++)
-	return  (c);
+	 c = (char) va_arg(va_printf, int);/*cast to change int for char*/
+
+	 return (write(1, &c, sizeof(char))); //un puntero? o una direccion? o qué?
 }
 
 /**
@@ -48,7 +61,7 @@ char _printf_c(va_list va_printf)
  */
 int _printf_d(va_list va_printf)
 {
-	int number = a;
+	int number = 0;
 	int dummie = number;
 	int cadena[25];
 	int e = 0;
