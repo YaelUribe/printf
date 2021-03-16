@@ -17,4 +17,5 @@ char _printf_c(va_list va_printf);
 int _printf_d(va_list va_printf);
 int (*get_operator(const char c))(va_list va_printf);
 int aval(char c);
+char _write(f);
 #endif /* HOLBERTON_H */
