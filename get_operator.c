@@ -7,21 +7,19 @@
 int (*get_operator(const char c))(va_list va_printf)
 {
 	oper red[] = {
-		{"c", _printf_c},
-		{"s", _printf_s},
-		{"d", _printf_d},
-		{"i", _printf_d},
-		{NULL, NULL},
+		{'c', _printf_c},
+		{'s', _printf_s},
+		{'d', _printf_d},
+		{'i', _printf_d},
 	};
 	int a = 0;
 
-	for (a = 0; a < 5; a++)
+	for (a = 0; a < 4; a++)
 	{
-		if(c == red[a].tipo)
+		if (c == red[a].tipo)
 		{
 			return (red[a].fn);
 		}
 	}
-	/*if doesn't find proper function*/
-	return (0);
+	return (0); /*returns 0 if no operator matches*/
 }
