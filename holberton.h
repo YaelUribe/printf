@@ -16,11 +16,12 @@ struct operator
 };
 int _printf(const char *format, ...);
 typedef struct operator oper;
-int _strlen(char *s); /* string length*/
-char _printf_s(va_list va_printf); /*print string*/
-char _printf_c(va_list va_printf); /*print char*/
+int _printf_s(va_list va_printf); /*print string*/
+int _printf_c(va_list va_printf); /*print char*/
 int _printf_d(va_list va_printf); /*print digits, integers*/
-int (*get_operator(const char c))(va_list va_printf);/*determines operator to use*/
+int (*get_operator(const char c))(va_list va_printf);  /*determines operator to use*/
 int aval(char c);/*validates char with operator*/
-char _write(f); /* putchar-like function*/
+int _write(char f); /* putchar-like function*/
+int _divider(int digitos);
+int _digitos(unsigned int dummie);
 #endif /* HOLBERTON_H */
