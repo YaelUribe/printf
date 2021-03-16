@@ -6,15 +6,15 @@
 */
 int _printf(const char *format, ...)
 {
-	if (format == NULL)
-	{
-		return (-1);
-	}
 	va_list va_printf;
 
 	int buffer;
 	int y;
 
+	if (format == NULL)
+	{
+		return (-1);
+	}
 	buffer = 0;
 	for (y = 0; format[y] != '\0'; y++)
 	{
