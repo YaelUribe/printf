@@ -31,6 +31,10 @@ int _printf(const char *format, ...)
 				{
 					return (0);
 				}
+				if (format[y] == '%')
+				{
+					buffer += _write('%');
+				}
 					// si no, putchar (char)
 			}// si nada de nada, putchar y incrementar buff
 	}
@@ -45,4 +49,13 @@ int _printf(const char *format, ...)
 int aval(char c)
 {
 	return (c == 'c' || c == 's' || c == 'd' || c == 'i');
+}
+/**
+ *_write - works like a putchar, but writing to stdout
+ *@f: char given
+ *Return: -1 if error, char if success
+ */
+char _write(f)
+{
+	return (write(1, &f, 1));
 }
