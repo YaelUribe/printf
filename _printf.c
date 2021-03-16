@@ -1,17 +1,17 @@
 #include "holberton.h"
 /**
-*
-*
+*_printf - printf-like function
+*@format: format to print from variadic functions
+*Return: buffer if succes, if error
 */
 int _printf(const char *format, ...)
 {
 	if (format == NULL)
 	{
-		return (0); //-1 ?? lo que sea
+		return (-1);
 	}
 	va_list va_printf;
 
-	int number;
 	int buffer;
 	int leng = _strlen(format);
 	int y;
@@ -29,14 +29,18 @@ int _printf(const char *format, ...)
 				}
 				else if (format[y] == '\0')
 				{
-					return (0);
+					return (-1);
 				}
-				if (format[y] == '%')
+				else if (format[y] == '%')
 				{
 					buffer += _write('%');
 				}
-					// si no, putchar (char)
-			}// si nada de nada, putchar y incrementar buff
+				else if(format[y] != '\0')
+				{
+					buffer += _write(format[y]);
+				}
+			}
+			buffer += _write(format[y])
 	}
 	va_end(va_printf);
 	return (buffer); // (write(1, buffer, 1024);
