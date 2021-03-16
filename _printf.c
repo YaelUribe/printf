@@ -15,9 +15,9 @@ int _printf(const char *format, ...)
 	int buffer;
 	int y;
 
+	buffer = 0;
 	for (y = 0; format[y] != '\0'; y++)
 	{
-		buffer = 0;
 		va_start(va_printf, format);
 		if (format[y] == '%')
 		{
