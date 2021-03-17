@@ -6,18 +6,17 @@
 */
 int _printf(const char *format, ...)
 {
+	va_list va_printf;
+	int buffer;
+	int y;
+
 	if (format == NULL)
 	{
 		return (-1);
 	}
-	va_list va_printf;
-
-	int buffer;
-	int y;
-
+	buffer = 0;
 	for (y = 0; format[y] != '\0'; y++)
 	{
-		buffer = 0;
 		va_start(va_printf, format);
 		if (format[y] == '%')
 		{
@@ -40,10 +39,7 @@ int _printf(const char *format, ...)
 				buffer += _write(format[y]);
 			}
 		}
-		else
-		{
-        	buffer += _write(format[y]);
-		}
+		buffer += _write(format[y]);
 	}
 	va_end(va_printf);
 
