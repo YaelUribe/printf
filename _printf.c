@@ -15,9 +15,9 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 	buffer = 0;
+	va_start(va_printf, format);
 	while (format[y] != '\0')
 	{
-		va_start(va_printf, format);
 		if (format[y] == '%')
 		{
 			y++;
