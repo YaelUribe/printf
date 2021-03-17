@@ -9,14 +9,13 @@ int _printf(const char *format, ...)
 	va_list va_printf;
 	int buffer;
 	int y = 0;
-	int leng = _strlen(format);
 
 	if (format == NULL)
 	{
 		return (-1);
 	}
 	buffer = 0;
-	while ((format[y] != '\0') && ((y + 1) < leng))
+	while (format[y] != '\0')
 	{
 		va_start(va_printf, format);
 		if (format[y] == '%')
@@ -40,8 +39,11 @@ int _printf(const char *format, ...)
 			}
 			y++;
 		}
+		else
+		{
 		buffer += _write(format[y]);
 		y++;
+		}
 	}
 	va_end(va_printf);
 
