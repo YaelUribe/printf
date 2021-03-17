@@ -20,20 +20,19 @@ int _printf(const char *format, ...)
 	{
 		if (format[y] == '%')
 		{
-			y++;
-			if (aval(format[y]))
+			if (aval(format[y + 1]))
 			{
 				buffer += get_operator(format[y])(va_printf);
 			}
-			else if (format[y] == '\0')
+			else if (format[y + 1] == '\0')
 			{
 				return (-1);
 			}
-			else if (format[y] != '\0')
+			else if (format[y + 1] != '\0')
 			{
 				buffer += _write(format[y]);
 			}
-			else if (format[y] == '%')
+			else if (format[y + 1] == '%')
 			{
 				_write('%');
 			}
