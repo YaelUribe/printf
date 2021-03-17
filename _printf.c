@@ -65,6 +65,7 @@ int aval(char c)
 {
 	return (c == 'c' || c == 's' || c == 'd' || c == 'i' || c == '%');
 }
+
 /**
  *_write - works like a putchar, but writing to stdout
  *@f: char given
