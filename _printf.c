@@ -40,7 +40,10 @@ int _printf(const char *format, ...)
 				buffer += _write(format[y]);
 			}
 		}
-		buffer += _write(format[y]);
+		else
+		{
+			buffer += _write(format[y]);
+		}
 	}
 	va_end(va_printf);
 
