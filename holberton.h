@@ -24,4 +24,5 @@ int aval(char c);/*validates char with operator*/
 int _write(char f); /* putchar-like function*/
 int _divider(int digitos);
 int _digitos(unsigned int dummie);
+int _strlen(const char *s);
 #endif /* HOLBERTON_H */
