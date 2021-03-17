@@ -13,7 +13,7 @@ int _printf_s(va_list va_printf)
 	strp = va_arg(va_printf, char*);
 	if (strp == NULL)
 	{/* if our pointer is empty, return null*/
-		return (write(1, "NULL", 4));
+		return (write(1, "(null)", 6));
 	}
 	else
 	{		/*here get length of string*/
@@ -37,4 +37,19 @@ int _printf_c(va_list va_printf)
 
 	c = (char) va_arg(va_printf, int);/*cast to change int for char*/
 	return (write(1, &c, sizeof(char)));
+}
+/**
+ *_strlen - determines length of given pointer
+ *@s: pointer format
+ *Return: lenght of string
+ */
+int _strlen(const char *s)
+{
+	int g;
+
+	for (g = 0; s[g] != '\0'; g++)
+	{
+		;
+	}
+		return (g + 1);
 }
