@@ -20,8 +20,7 @@ This is a team project. In this project, it is proposed to create a function lik
 ***
 | File | Description |
 | ------------- | ------------- |
-|      holberton.h       | header file that contains the structure and prototypes of the project.
-|
+|      holberton.h       | header file that contains the structure and prototypes of the project.|
 |       _printf.c        | printf whit _write works like a putchar, but writing to stdout.  |
 |      _print_f_d.c      | Prints a decimal (base 10) number  |
 |       functions.c      | Contains the functions that print the given format  |
