@@ -68,6 +68,6 @@ If an output error is encountered, a negative value is returned.)
 PP
 This example prints a integer("%d"), a string("%s") and character("%c")
 .SH AUTHOR
-Yael Uribe email:
+Yael Uribe email:  2962@holbertonschool.com
 .PP
 Hugo Cortés email: hugocortesmu@gmail.com  2432@holbertonschool.com
