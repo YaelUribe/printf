@@ -49,8 +49,8 @@ int _printf_d(va_list va_printf)
 int _divider(int digitos)
 {
 	int base = 1;
-
 	int exponente = digitos;
+
 	while (exponente > 1)
 	{
 		base *= 10;
