@@ -8,14 +8,15 @@ int _printf(const char *format, ...)
 {
 	va_list va_printf;
 	int buffer;
-	int y;
+	int y = 0;
+	int leng = _strlen(format);
 
 	if (format == NULL)
 	{
 		return (-1);
 	}
 	buffer = 0;
-	for (y = 0; format[y] != '\0'; y++)
+	while ((format[y] != '\0') && ((y + 1) < leng))
 	{
 		va_start(va_printf, format);
 		if (format[y] == '%')
@@ -24,22 +25,23 @@ int _printf(const char *format, ...)
 			if (aval(format[y]))
 			{
 				buffer += get_operator(format[y])(va_printf);
-				y++;
 			}
 			else if (format[y] == '\0')
 			{
 				return (-1);
 			}
-			else if (format[y] == '%')
-			{
-				buffer += _write('%');
-			}
 			else if (format[y] != '\0')
 			{
 				buffer += _write(format[y]);
 			}
+			else if (format[y] == '%')
+			{
+				_write('%');
+			}
+			y++;
 		}
 		buffer += _write(format[y]);
+		y++;
 	}
 	va_end(va_printf);
 
