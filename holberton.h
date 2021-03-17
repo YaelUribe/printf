@@ -19,7 +19,8 @@ typedef struct operator oper;
 int _printf_s(va_list va_printf); /*print string*/
 int _printf_c(va_list va_printf); /*print char*/
 int _printf_d(va_list va_printf); /*print digits, integers*/
-int (*get_operator(const char c))(va_list va_printf);  /*determines operator to use*/
+  /*determines operator to use*/
+int (*get_operator(const char c))(va_list va_printf);
 int aval(char c);/*validates char with operator*/
 int _write(char f); /* putchar-like function*/
 int _divider(int digitos);
