@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 	va_list va_printf;
 	int buffer;
 	int y = 0;
+	char aux = '%';
 
 	if (format == NULL)
 	{
@@ -23,7 +24,13 @@ int _printf(const char *format, ...)
 			if (aval(format[y + 1]))
 			{
 				y++;
-				buffer += get_operator(format[y])(va_printf);
+				if (format[y] == '%')
+				{
+					write(1, &aux, 1);
+					buffer++;
+				}
+				else
+					buffer += get_operator(format[y])(va_printf);
 			}
 			else if (format[y + 1] == '\0')
 			{
@@ -33,9 +40,9 @@ int _printf(const char *format, ...)
 			{
 				buffer += _write(format[y]);
 			}
-			else if (format[y + 1] == '%')
+			else if (format[y] == '%')
 			{
-				_write('%');
+					_write('%');
 			}
 			y++;
 		}
@@ -56,7 +63,7 @@ int _printf(const char *format, ...)
  */
 int aval(char c)
 {
-	return (c == 'c' || c == 's' || c == 'd' || c == 'i');
+	return (c == 'c' || c == 's' || c == 'd' || c == 'i' || c == '%');
 }
 /**
  *_write - works like a putchar, but writing to stdout
