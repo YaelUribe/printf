@@ -9,19 +9,23 @@ int _printf(const char *format, ...)
 	va_list va_printf;
 
 	int buffer;
-	int y;
+	int y = 0;
 
 	if (format == NULL)
 	{
 		return (-1);
 	}
 	buffer = 0;
-	for (y = 0; format[y] != '\0'; y++)
+	while (format[y] != '\0')
 	{
 		va_start(va_printf, format);
 		if (format[y] == '%')
 		{
 			y++;
+			if (format[y] == '%')
+			{
+				buffer += _write('%');
+			}
 			if (aval(format[y]))
 			{
 				buffer += get_operator(format[y])(va_printf);
