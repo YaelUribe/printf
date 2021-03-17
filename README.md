@@ -15,12 +15,12 @@ This is a team project. In this project, it is proposed to create a function lik
 
 ## Flowchart
 ***
-![Image text]
+![Image text](https://media-exp1.licdn.com/dms/image/C4E22AQFr6Rvm_INn0g/feedshare-shrink_2048_1536/0/1616009320942?e=1619049600&v=beta&t=QOVcCcEbSqHFhTi_24Oz3D474vyjQHjQM-zxO-RO0BQ)
 ## Files
 ***
 | File | Description |
 | ------------- | ------------- |
-|      holberton.h       | header file that contains the structure and prototypes of the project.|
+|      holberton.h       | header file that contains the structure and prototypes of the project|
 |       _printf.c        | printf whit _write works like a putchar, but writing to stdout.  |
 |      _print_f_d.c      | Prints a decimal (base 10) number  |
 |       functions.c      | Contains the functions that print the given format  |
