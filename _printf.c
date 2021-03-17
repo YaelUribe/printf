@@ -22,6 +22,7 @@ int _printf(const char *format, ...)
 		{
 			if (aval(format[y + 1]))
 			{
+				y++;
 				buffer += get_operator(format[y])(va_printf);
 			}
 			else if (format[y + 1] == '\0')
@@ -30,10 +31,12 @@ int _printf(const char *format, ...)
 			}
 			else if (format[y + 1] != '\0')
 			{
+				y++;
 				buffer += _write(format[y]);
 			}
 			else if (format[y + 1] == '%')
 			{
+				y++;
 				_write('%');
 			}
 			y++;
