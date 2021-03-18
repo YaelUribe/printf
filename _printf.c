@@ -7,14 +7,11 @@
 int _printf(const char *format, ...)
 {
 	va_list va_printf;
-	int buffer;
-	int y = 0;
+	int buffer,	y = 0;
 	char aux = '%';
 
 	if (format == NULL)
-	{
 		return (-1);
-	}
 	buffer = 0;
 	va_start(va_printf, format);
 	while (format[y] != '\0')
@@ -33,27 +30,18 @@ int _printf(const char *format, ...)
 					buffer += get_operator(format[y])(va_printf);
 			}
 			else if (format[y + 1] == '\0')
-			{
 				return (-1);
-			}
 			else if (format[y + 1] != '\0')
-			{
 				buffer += _write(format[y]);
-			}
-			else if (format[y] == '%')
-			{
-					_write('%');
-			}
 			y++;
 		}
 		else
 		{
-		buffer += _write(format[y]);
-		y++;
+			buffer += _write(format[y]);
+			y++;
 		}
 	}
 	va_end(va_printf);
-
 	return (buffer);
 }
 /**
