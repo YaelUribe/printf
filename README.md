@@ -12,7 +12,15 @@
 
 ### General Info
 ***
-This is a team project. In this project, it is proposed to create a function like printf, but without using printf, just emulate its operation and logic.
+This is a project with a function (_printf) that mimics the behavior and functionality of the "printf" function from the standard C programming language library in such a way that it emulates its operation and logic. Using the _write to print characters and integers as needed.
+
+What you should learn from this project:
+
+- How to use git in a team setting.
+- Applying variadic functions to a big project.
+- The complexities of printf.
+- Managing a lot of files and finding a good workflow.
+- reinforce teamwork skills.
 
 ## Flowchart
 ***
